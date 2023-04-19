@@ -1,0 +1,12 @@
+extends base.pug
+include mixinrating.pug
+
+block content
+    h4 Searching by rating : #{rating}
+    form(method="GET")
+        input(name="year" type="text" placeholder="Filter by year")
+        input(name="rating" type="text" placeholder="Filter by year")
+        input(type="submit" value="Search")
+    each x in movie_rating
+        +videorating(x)
+

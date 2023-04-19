@@ -1,0 +1,14 @@
+extends base.pug
+include mixinyear.pug
+
+
+block content
+    h4 Searching by year : #{year}
+    form(method="GET")
+        input(name="year" type="text" placeholder="Filter by year")
+        input(name="rating" type="text" placeholder="Filter by year")
+        input(type="submit" value="Search")
+    each x in movie_year
+        +videoyear(x)
+
+

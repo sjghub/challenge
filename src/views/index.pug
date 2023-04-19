@@ -1,0 +1,12 @@
+extends base.pug
+include mixin.pug
+include mixinyear.pug
+
+block content
+    h4 Movies!
+    form(method="GET" action="/filter")
+        input(name="year" type="text" placeholder="Filter by year")
+        input(name="rating" type="text" placeholder="Filter by rating")
+        input(type="submit" value="Search")
+    each x in movies 
+        +video(x)
